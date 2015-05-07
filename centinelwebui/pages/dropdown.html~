@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+cars=new Array("Mercedes","Volvo","BMW","porche","Maruti","Ferrari");
+phones=new Array('Samsung','Nokia','Iphone');
+
+populateSelect();
+
+$(function() {
+
+      $('#cat').change(function(){
+        populateSelect();
+    });
+    
+});
+
+
+function populateSelect(){
+    cat=$('#cat').val();
+    $('#item').html('');
+    
+    
+    if(cat=='car'){
+        cars.forEach(function(t) { 
+            $('#item').append('<option>'+t+'</option>');
+        });
+    }
+    
+    if(cat=='phone'){
+        phones.forEach(function(t) {
+            $('#item').append('<option>'+t+'</option>');
+        });
+    }
+    
+} 
+</script>
+
+<select id="cat">
+    <option disabled selected> -- select an option -- </option>
+    <option val="car">car</option>
+    <option val="phone">phone</option>
+</select>
+
+<select id="item">
+
+</select>
+</html>

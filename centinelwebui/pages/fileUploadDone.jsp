@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<%@ page import ="java.sql.*,java.util.Properties" %>
+<%@ page import="java.io.*,java.util.*, java.text.*, javax.servlet.*" %>
+<%@ page import="javax.servlet.http.*" %>
+<%@ page import="org.apache.commons.fileupload.*" %>
+<%@ page import="org.apache.commons.fileupload.disk.*" %>
+<%@ page import="org.apache.commons.fileupload.servlet.*" %>
+<%@ page import="org.apache.commons.io.output.*" %>
+
+
+<head>
+<%!
+  private static final String dbClassName = "com.mysql.jdbc.Driver";
+  private static final String CONNECTION = "jdbc:mysql://127.0.0.1/centinelweb";
+  private PreparedStatement preparedStatement = null;
+public boolean duplicateUserFlag = false;
+public boolean duplicateEmailFlag = false;
+public String message = "";
+           Statement st,st1,st2,st3,st4,st5;
+	PreparedStatement pst,pst1,pst2,pst3,pst4,pst5;
+           ResultSet rs,rs1,rs2,rs3,rs5; 
+           int count=0; 
+           String pass,param1;
+ArrayList<String> outputList = new ArrayList<String>();
+%>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>Centinel Web User Interface</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+  <script src="../js/validate_centinel_code.min.js"></script>
+  <script src="../js/jquery-1.11.2.min.js"></script>
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+
+                <a class="navbar-brand" href="dashboard.jsp">
+		Centinel Web User Interface</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="userprofile.jsp"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="logout.jsp"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="dashboard.jsp"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="addcentinel.jsp"><i class="fa fa-plus-square fa-fw"></i> Add Centinel</a>
+                        </li>
+                        <li>
+                            <a href="upload.jsp"><i class="fa fa-upload fa-fw"></i> Upload Experiments</a>
+                        </li>
+                        <li>
+                            <a href="schedule.jsp"><i class="fa fa-calendar fa-fw"></i> Schedule Experiment</a>
+                        </li>
+                        <li>
+                            <a href="experimentlist.jsp"><i class="fa fa-flask fa-fw"></i> Experiment List</a>
+                        </li>
+                        <li>
+                            <a href="results.jsp"><i class="fa fa-tasks fa-fw"></i> View Results</a>
+                        </li>
+                        <li>
+                            <a href="resultsCompare.jsp"><i class="fa fa-bar-chart fa-fw"></i> Compare Results</a>
+                        </li>
+                        <li>
+                            <a href="server.jsp"><i class="fa fa-server fa-fw"></i> Server Information</a>
+                        </li>
+                        <li>
+                            <a href="locate.jsp"><i class="fa fa-street-view fa-fw"></i> Locate Yourself</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+
+<div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header"><span class="text-primary">Experiment Upload</span></h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Experiment Uploaded Successfully
+                        </div>
+                        <div class="panel-body">
+
+<%
+String dataFileName = "";
+String exptFileName = "";
+   File file ;
+   int maxFileSize = 5000 * 1024;
+   int maxMemSize = 5000 * 1024;
+   String sessionUserName = session.getAttribute("uid").toString();
+   String sessionUserCountry = session.getAttribute("userCountryCode").toString();
+   String filePath = "/home/ashwin/.centinel/";
+   String centinelnode = session.getAttribute("centnode").toString();
+
+
+
+   // Verify the content type
+   String contentType = request.getContentType();
+   if ((contentType.indexOf("multipart/form-data") >= 0)) {
+
+      DiskFileItemFactory factory = new DiskFileItemFactory();
+      // maximum size that will be stored in memory
+      factory.setSizeThreshold(maxMemSize);
+      // Location to save data that is larger than maxMemSize.
+      factory.setRepository(new File("/home/ashwin/"));
+
+      // Create a new file upload handler
+      ServletFileUpload upload = new ServletFileUpload(factory);
+      // maximum file size to be uploaded.
+      upload.setSizeMax( maxFileSize );
+      try{ 
+         // Parse the request to get file items.
+         List fileItems = upload.parseRequest(request);
+
+         // Process the uploaded file items
+         Iterator i = fileItems.iterator();
+
+
+         while ( i.hasNext () ) 
+         { 
+            FileItem fi = (FileItem)i.next();
+            if ( !fi.isFormField () )	
+            {
+            // Get the uploaded file parameters
+            String fieldName = fi.getFieldName();
+            String fileName = fi.getName();
+            boolean isInMemory = fi.isInMemory();
+            long sizeInBytes = fi.getSize();
+            // Write the file
+            if( fileName.lastIndexOf("\\") >= 0 ){ 
+            file = new File( filePath + 
+            fileName.substring( fileName.lastIndexOf("\\"))) ;
+            }else{
+		if(fileName.endsWith("txt")){
+			filePath = "/home/ashwin/.centinel/data/"+sessionUserName+"/";
+			
+				File dir1 = new File("/home/ashwin/.centinel/data/"+sessionUserName);
+				if (!dir1.exists()) {
+					if (dir1.mkdir()) {
+
+					} else {
+
+					}
+				}
+
+			dataFileName = fileName;
+
+			file = new File( filePath + dataFileName.substring(fileName.lastIndexOf("\\")+1)) ;
+		}
+		else {
+			filePath = "/home/ashwin/.centinel/experiments/"+sessionUserName+"/";
+				File dir2 = new File("/home/ashwin/.centinel/experiments/"+sessionUserName);
+				if (!dir2.exists()) {
+					if (dir2.mkdir()) {
+					
+					} else {
+					
+					}
+				}
+
+			exptFileName = fileName;
+			
+		        file = new File( filePath + exptFileName.substring(fileName.lastIndexOf("\\")+1)) ;
+		}
+
+            }
+            fi.write( file ) ;
+            out.println("Uploaded File: " + fileName + "<br>");
+
+            }
+         }
+
+      }catch(Exception ex) {
+		out.println(ex);
+      }
+
+
+   }
+
+// Start inserting the experiment to the database: 
+try{
+    Class.forName(dbClassName);
+
+    Properties p = new Properties();
+    p.put("user","ashwin");
+    p.put("password","ashwin");
+
+    // Now try to connect
+       Connection c = DriverManager.getConnection(CONNECTION,p);
+
+
+	Statement s = c.createStatement();
+	String sq = "select count(*) from centinelweb.experiments where username='"+sessionUserName+"' and experimentname='"+exptFileName+"' and datafile='"+dataFileName+"'";
+	
+	ResultSet rl = s.executeQuery(sq);
+
+	rl.next();
+	if(rl.getInt(1) != 0) {
+		// Delete the values
+		Statement sw = c.createStatement();
+		String delQ = "DELETE from centinelweb.experiments where username='"+sessionUserName+"' and experimentname='"+exptFileName+"' and datafile='"+dataFileName+"'";
+		
+		int ret = sw.executeUpdate(delQ);
+
+	}
+	
+	// Create prepared statement object 
+	preparedStatement = c.prepareStatement("insert into centinelweb.experiments values (?,?,?,?,?,?,?)");
+
+
+
+      java.util.Date dNow = new java.util.Date( );
+      SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+
+
+
+
+      preparedStatement.setString(1, sessionUserName);
+      preparedStatement.setString(2, ft.format(dNow));
+      preparedStatement.setString(3, exptFileName);
+      preparedStatement.setString(4, dataFileName);
+      preparedStatement.setString(5, "0");
+      preparedStatement.setString(6, "0");
+      preparedStatement.setString(7, centinelnode);
+
+
+      int returnValue = preparedStatement.executeUpdate();
+	if(returnValue ==1 ){
+
+}
+      }catch(Exception ex) {
+         out.println(ex);
+      }
+
+%>
+
+       </div>
+
+                        <div class="panel-footer">
+                            Experiment Upload
+                        </div>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+
+            </div>
+            <!-- /.row -->
+
+     <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+
+
+
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

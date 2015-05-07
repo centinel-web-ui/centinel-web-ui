@@ -1,0 +1,69 @@
+myFunction([
+{
+  "ssl_strip": [
+    {
+      "status": 302,
+      "headers": {
+        "content-length": "0",
+        "connection": "keep-alive",
+        "location": "https://www.facebook.com/",
+        "date": "Tue, 05 May 2015 06:27:34 GMT",
+        "content-type": "text/html",
+        "x-fb-debug": "c+S49RLnzut+xxT9tXwqtWYU71sX5KbqBXOybI4L07OyqRkv5dMLk/nWP+JXYfxdTH3w/Yrsabcd8Engo2PH+A=="
+      },
+      "site": "http://www.facebook.com",
+      "success": true
+    },
+    {
+      "status": 301,
+      "headers": {
+        "connection": "Keep-Alive",
+        "location": "https://www.wellsfargo.com",
+        "content-length": "0",
+        "server": "KONICHIWA/1.1"
+      },
+      "site": "http://www.wellsfargo.com",
+      "success": true
+    },
+    {
+      "status": 301,
+      "headers": {
+        "alternate-protocol": "80:quic,p=1",
+        "content-length": "226",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "age": "235048",
+        "expires": "Mon, 01 Jun 2015 13:10:06 GMT",
+        "server": "sffe",
+        "location": "https://encrypted.google.com/",
+        "cache-control": "public, max-age=2592000",
+        "date": "Sat, 02 May 2015 13:10:06 GMT",
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "site": "http://encrypted.google.com",
+      "success": true
+    },
+    {
+      "status": 301,
+      "headers": {
+        "content-length": "178",
+        "expires": "Wed, 04 May 2016 06:27:34 GMT",
+        "server": "nginx",
+        "connection": "keep-alive",
+        "location": "https://duckduckgo.com/",
+        "cache-control": "max-age=31536000",
+        "date": "Tue, 05 May 2015 06:27:34 GMT",
+        "content-type": "text/html"
+      },
+      "site": "http://www.duckduckgo.com",
+      "success": true
+    }
+  ],
+  "meta_exception": "404 Client Error: NOT FOUND",
+  "meta": {
+    "client_time": "2015-05-05T02:27:34.216887",
+    "schedule_name": "ssl_strip",
+    "time_taken": 0.381612
+  }
+}
+]}

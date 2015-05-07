@@ -1,0 +1,264 @@
+{
+  "meta_exception": "404 Client Error: NOT FOUND",
+  "meta": {
+    "client_time": "2015-05-05T02:27:34.622746",
+    "schedule_name": "traceroute",
+    "time_taken": 52.267686
+  },
+  "traceroute": [
+    {
+      "domain": "www.google.com",
+      "method": "icmp",
+      "error": ": not enough privileges"
+    },
+    {
+      "domain": "www.google.com",
+      "total_hops": 30,
+      "hops": {
+        "1": {
+          "rtt2": "5.163",
+          "ip": "10.255.32.1",
+          "rtt1": "2.968",
+          "domain_name": "10.255.32.1",
+          "rtt3": "5.171"
+        },
+        "2": {
+          "rtt2": "5.152",
+          "ip": "38.105.236.161",
+          "rtt1": "5.165",
+          "domain_name": "38.105.236.161",
+          "rtt3": "7.268"
+        },
+        "3": {
+          "rtt2": "7.286",
+          "ip": "38.104.66.205",
+          "rtt1": "7.300",
+          "domain_name": "te0-2-1-2.rcr21.jfk01.atlas.cogentco.com",
+          "rtt3": "7.273"
+        },
+        "4": {
+          "raw": "4  be2657.rcr24.jfk01.atlas.cogentco.com (154.54.6.194)  10.192 ms be2656.rcr23.jfk01.atlas.cogentco.com (66.28.4.50)  10.199 ms  10.193 ms"
+        },
+        "5": {
+          "raw": "5  be2629.ccr41.jfk02.atlas.cogentco.com (154.54.27.66)  10.178 ms be2631.ccr41.jfk02.atlas.cogentco.com (154.54.27.238)  10.164 ms be2630.ccr42.jfk02.atlas.cogentco.com (154.54.27.122)  10.150 ms"
+        },
+        "6": {
+          "raw": "6  be2148.ccr21.dca01.atlas.cogentco.com (154.54.31.117)  20.012 ms be2149.ccr22.dca01.atlas.cogentco.com (154.54.31.125)  12.872 ms be2518.mpd21.dca01.atlas.cogentco.com (154.54.80.162)  14.578 ms"
+        },
+        "7": {
+          "rtt2": "14.538",
+          "ip": "154.54.41.53",
+          "rtt1": "14.560",
+          "domain_name": "be2176.ccr41.iad02.atlas.cogentco.com",
+          "rtt3": "14.517"
+        },
+        "8": {
+          "raw": "8  * * *"
+        },
+        "9": {
+          "raw": "9  * * *"
+        },
+        "10": {
+          "raw": "10  * * *"
+        },
+        "11": {
+          "raw": "11  * * *"
+        },
+        "12": {
+          "raw": "12  * * *"
+        },
+        "13": {
+          "raw": "13  * * *"
+        },
+        "14": {
+          "raw": "14  * * *"
+        },
+        "15": {
+          "raw": "15  * * *"
+        },
+        "16": {
+          "raw": "16  * * *"
+        },
+        "17": {
+          "raw": "17  * * *"
+        },
+        "18": {
+          "raw": "18  * * *"
+        },
+        "19": {
+          "raw": "19  * * *"
+        },
+        "20": {
+          "raw": "20  * * *"
+        },
+        "21": {
+          "raw": "21  * * *"
+        },
+        "22": {
+          "raw": "22  * * *"
+        },
+        "23": {
+          "raw": "23  * * *"
+        },
+        "24": {
+          "raw": "24  * * *"
+        },
+        "25": {
+          "raw": "25  * * *"
+        },
+        "26": {
+          "raw": "26  * * *"
+        },
+        "27": {
+          "raw": "27  * * *"
+        },
+        "28": {
+          "raw": "28  * * *"
+        },
+        "29": {
+          "raw": "29  * * *"
+        },
+        "30": {
+          "raw": "30  * * *"
+        }
+      },
+      "meaningful_hops": 4,
+      "unparseable_lines": {
+        "1": "traceroute to www.google.com (173.194.123.49), 30 hops max, 60 byte packets"
+      },
+      "forcefully_terminated": false,
+      "time_elapsed": 25,
+      "method": "udp"
+    },
+    {
+      "domain": "www.google.com",
+      "method": "tcp",
+      "error": ": not enough privileges"
+    },
+    {
+      "domain": "www.github.com",
+      "method": "icmp",
+      "error": ": not enough privileges"
+    },
+    {
+      "domain": "www.github.com",
+      "total_hops": 30,
+      "hops": {
+        "1": {
+          "rtt2": "6.390",
+          "ip": "10.255.32.1",
+          "rtt1": "6.405",
+          "domain_name": "10.255.32.1",
+          "rtt3": "6.371"
+        },
+        "2": {
+          "rtt2": "6.364",
+          "ip": "38.105.236.161",
+          "rtt1": "6.369",
+          "domain_name": "38.105.236.161",
+          "rtt3": "6.352"
+        },
+        "3": {
+          "rtt2": "8.944",
+          "ip": "38.104.66.205",
+          "rtt1": "8.982",
+          "domain_name": "te0-2-1-2.rcr21.jfk01.atlas.cogentco.com",
+          "rtt3": "13.355"
+        },
+        "4": {
+          "raw": "4  be2657.rcr24.jfk01.atlas.cogentco.com (154.54.6.194)  13.374 ms be2656.rcr23.jfk01.atlas.cogentco.com (66.28.4.50)  13.339 ms be2657.rcr24.jfk01.atlas.cogentco.com (154.54.6.194)  13.330 ms"
+        },
+        "5": {
+          "raw": "5  be2631.ccr41.jfk02.atlas.cogentco.com (154.54.27.238)  13.319 ms be2629.ccr41.jfk02.atlas.cogentco.com (154.54.27.66)  13.285 ms be2630.ccr42.jfk02.atlas.cogentco.com (154.54.27.122)  13.275 ms"
+        },
+        "6": {
+          "raw": "6  be2149.ccr22.dca01.atlas.cogentco.com (154.54.31.125)  21.032 ms be2148.ccr21.dca01.atlas.cogentco.com (154.54.31.117)  16.280 ms be2151.mpd22.dca01.atlas.cogentco.com (154.54.40.73)  16.244 ms"
+        },
+        "7": {
+          "raw": "7  be2176.ccr41.iad02.atlas.cogentco.com (154.54.41.53)  16.232 ms be2177.ccr41.iad02.atlas.cogentco.com (154.54.41.205)  16.209 ms  19.034 ms"
+        },
+        "8": {
+          "raw": "8  * * *"
+        },
+        "9": {
+          "raw": "9  * * *"
+        },
+        "10": {
+          "raw": "10  * * *"
+        },
+        "11": {
+          "raw": "11  * * *"
+        },
+        "12": {
+          "raw": "12  * * *"
+        },
+        "13": {
+          "raw": "13  * * *"
+        },
+        "14": {
+          "raw": "14  * * *"
+        },
+        "15": {
+          "raw": "15  * * *"
+        },
+        "16": {
+          "raw": "16  * * *"
+        },
+        "17": {
+          "raw": "17  * * *"
+        },
+        "18": {
+          "raw": "18  * * *"
+        },
+        "19": {
+          "raw": "19  * * *"
+        },
+        "20": {
+          "raw": "20  * * *"
+        },
+        "21": {
+          "raw": "21  * * *"
+        },
+        "22": {
+          "raw": "22  * * *"
+        },
+        "23": {
+          "raw": "23  * * *"
+        },
+        "24": {
+          "raw": "24  * * *"
+        },
+        "25": {
+          "raw": "25  * * *"
+        },
+        "26": {
+          "raw": "26  * * *"
+        },
+        "27": {
+          "raw": "27  * * *"
+        },
+        "28": {
+          "raw": "28  * * *"
+        },
+        "29": {
+          "raw": "29  * * *"
+        },
+        "30": {
+          "raw": "30  * * *"
+        }
+      },
+      "meaningful_hops": 3,
+      "unparseable_lines": {
+        "1": "traceroute to www.github.com (192.30.252.129), 30 hops max, 60 byte packets"
+      },
+      "forcefully_terminated": false,
+      "time_elapsed": 25,
+      "method": "udp"
+    },
+    {
+      "domain": "www.github.com",
+      "method": "tcp",
+      "error": ": not enough privileges"
+    }
+  ]
+}

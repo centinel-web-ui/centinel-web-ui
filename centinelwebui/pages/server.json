@@ -1,0 +1,11 @@
+myFunction([
+{
+  "server": {
+    "verify": true,
+    "login_file": "/home/ashwin/.centinel/login",
+    "total_timeout": 300,
+    "server_url": "https://0.0.0.0:8082",
+    "req_timeout": 15
+  }
+}
+])

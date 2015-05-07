@@ -1,0 +1,9 @@
+#graph {
+  width: 500px;
+  height: 250px;
+  margin: 10px auto 0 auto;
+}
+pre {
+  height: 250px;
+  overflow: auto;
+}

@@ -1,0 +1,28 @@
+myFunction([
+{
+  "meta_exception": "404 Client Error: NOT FOUND",
+  "meta": {
+    "client_time": "2015-05-05T02:28:28.054798",
+    "schedule_name": "ping",
+    "time_taken": 0.445887
+  },
+  "ping": [
+    {
+      "host": "www.google.com",
+      "success": "true"
+    },
+    {
+      "host": "www.twitter.com",
+      "success": "false"
+    },
+    {
+      "host": "www.facebook.com",
+      "success": "false"
+    },
+    {
+      "host": "www.baidu.com",
+      "success": "true"
+    }
+  ]
+}
+])

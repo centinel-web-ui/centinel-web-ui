@@ -1,0 +1,30 @@
+{
+  "meta_exception": "404 Client Error: NOT FOUND",
+  "meta": {
+    "client_time": "2015-05-06T12:03:03.469499",
+    "schedule_name": "ping",
+    "time_taken": 1.816356
+  },
+  "ping": [
+    {
+      "host": "www.google.com",
+      "success": "true",
+      "ttl": "49"
+    },
+    {
+      "host": "www.twitter.com",
+      "success": "true",
+      "ttl": "244"
+    },
+    {
+      "host": "www.facebook.com",
+      "success": "true",
+      "ttl": "82"
+    },
+    {
+      "host": "www.baidu.com",
+      "success": "true",
+      "ttl": "45"
+    }
+  ]
+}

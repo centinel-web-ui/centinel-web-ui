@@ -1,0 +1,154 @@
+{
+  "turkey": [
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "domain",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno -2] Name or service not known"
+      },
+      "blocked": "'body'"
+    },
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "response2",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno -2] Name or service not known"
+      },
+      "blocked": "'body'"
+    },
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "response1",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno -2] Name or service not known"
+      },
+      "blocked": "'body'"
+    },
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "request",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno -2] Name or service not known"
+      },
+      "blocked": "'body'"
+    },
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "response1-ips",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno -2] Name or service not known"
+      },
+      "blocked": "'body'"
+    },
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "nameserver",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno 111] Connection refused"
+      },
+      "blocked": "'body'"
+    },
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "domain",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno -2] Name or service not known"
+      },
+      "blocked": "'body'"
+    },
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "response2",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno -2] Name or service not known"
+      },
+      "blocked": "'body'"
+    },
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "response1",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno -2] Name or service not known"
+      },
+      "blocked": "'body'"
+    },
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "request",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno -2] Name or service not known"
+      },
+      "blocked": "'body'"
+    },
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "response1-ips",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno -2] Name or service not known"
+      },
+      "blocked": "'body'"
+    },
+    {
+      "request": {
+        "path": "/feamster/status/452889624541921280",
+        "host": "nameserver",
+        "method": "GET",
+        "ssl": true
+      },
+      "response": {
+        "failure": "[Errno -2] Name or service not known"
+      },
+      "blocked": "'body'"
+    }
+  ],
+  "meta_exception": "404 Client Error: NOT FOUND",
+  "meta": {
+    "client_time": "2015-05-05T02:28:28.513909",
+    "schedule_name": "turkey",
+    "time_taken": 26.263138
+  }
+}

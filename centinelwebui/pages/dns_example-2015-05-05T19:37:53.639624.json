@@ -1,0 +1,50 @@
+{
+  "meta_exception": "404 Client Error: NOT FOUND",
+  "meta": {
+    "client_time": "2015-05-05T19:37:53.639624",
+    "schedule_name": "dns_example",
+    "time_taken": 10.082374
+  },
+  "dns_example": [
+    {
+      "exp-name": "lookups",
+      "www.facebook.com": {
+        "domain": "www.facebook.com",
+        "response2": null,
+        "response1": "r7CBgAABAAIAAAAAA3d3dwhmYWNlYm9vawNjb20AAAEAAcAMAAUAAQAADEQADARzdGFyBGMxMHLAEMAuAAEAAQAAAIkABB8NSgE=",
+        "request": "r7ABAAABAAAAAAAAA3d3dwhmYWNlYm9vawNjb20AAAEAAQ==",
+        "response1-ips": [
+          "star.c10r.facebook.com.",
+          "31.13.74.1"
+        ],
+        "nameserver": "127.0.1.1"
+      },
+      "www.google.com": {
+        "domain": "www.google.com",
+        "response2": null,
+        "response1": "DCeBgAABAAUAAAAAA3d3dwZnb29nbGUDY29tAAABAAHADAABAAEAAABAAARKfeKSwAwAAQABAAAAQAAESn3ik8AMAAEAAQAAAEAABEp94pHADAABAAEAAABAAARKfeKQwAwAAQABAAAAQAAESn3ilA==",
+        "request": "DCcBAAABAAAAAAAAA3d3dwZnb29nbGUDY29tAAABAAE=",
+        "response1-ips": [
+          "74.125.226.146",
+          "74.125.226.147",
+          "74.125.226.145",
+          "74.125.226.144",
+          "74.125.226.148"
+        ],
+        "nameserver": "127.0.1.1"
+      }
+    },
+    {
+      "ID.SERVER": {
+        "127.0.1.1": "ziCFgAABAAAAAQAAAklEBlNFUlZFUgAAEAADwAwABgADAAFRgAAjwAwKaG9zdG1hc3RlcsAMAAAAAAAAcIAAABwgAAk6gAABUYA="
+      },
+      "HOSTNAME.BIND": {
+        "127.0.1.1": "3ACFgAABAAEAAQAACEhPU1ROQU1FBEJJTkQAABAAA8AMABAAAwAAAAAACwpHdWVzdC1kaGNwwAwAAgADAAAAAAACwAw="
+      },
+      "VERSION.BIND": {
+        "127.0.1.1": "1xSFgAABAAEAAAAAB1ZFUlNJT04EQklORAAAEAADwAwAEAADAAAAAAANDGRuc21hc3EtMi42OA=="
+      },
+      "exp-name": "chaos"
+    }
+  ]
+}
